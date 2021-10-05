@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: bounded-namespace
+---
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: bounded-namespace-quota
+  namespace: bounded-namespace
+spec:
+  hard:
+    requests.cpu: 1
+    requests.memory: 1Gi
+
